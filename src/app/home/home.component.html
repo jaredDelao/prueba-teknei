@@ -38,14 +38,15 @@
       </ion-card>
     </ng-container>
 
-    <ng-container *ngIf="posts.length > 0">
-      <ion-item>
-        <ion-icon slot="start" name="search-outline"></ion-icon>
-        <ion-input type="text" placeholder="Buscar una imagen..."></ion-input>
-        <ion-button slot="end" expand="block" fill="clear"> Buscar </ion-button>
-      </ion-item>
-
-      <ion-card *ngFor="let post of posts; index as i" [formGroup]="form">
+    <ion-item>
+      <ion-icon slot="start" name="search-outline"></ion-icon>
+      <ion-input type="text" placeholder="Buscar una imagen..." [formControl]="controlSearch"></ion-input>
+    </ion-item>
+    <small class="not-found-txt" *ngIf="controlSearch.value && postsFiltered.length == 0"
+      >No se encontraron resultados</small
+    >
+    <ng-container *ngIf="postsFiltered.length > 0">
+      <ion-card *ngFor="let post of postsFiltered; index as i" [formGroup]="form">
         <ion-item>
           <ion-avatar slot="start">
             <img [src]="post.idUser | getName: users:'photo' | imgNotFound" (load)="loader = false" />

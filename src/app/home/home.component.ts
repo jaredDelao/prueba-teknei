@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Post } from '@app/@core/interfaces/posts';
 import { PostsService } from '@app/@core/services/posts.service';
 import { Comment } from '@app/@core/interfaces/posts';
@@ -12,12 +12,14 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   loader = true;
   skeletonCount = Array(10);
   form: FormGroup;
+  controlSearch = new FormControl(null);
   $unsubscribe = new Subject<boolean>();
   posts: Post[] = [];
+  postsFiltered: Post[] = [];
   users: User[] = [];
 
   constructor(private postsService: PostsService, private fb: FormBuilder) {}
@@ -35,6 +37,13 @@ export class HomeComponent implements OnInit {
     this.posts = [];
     this.$unsubscribe.next(true);
     this.$unsubscribe.complete();
+  }
+
+  ngAfterViewInit(): void {
+    this.controlSearch.valueChanges.subscribe((search: string) => {
+      if (!search) return (this.postsFiltered = this.posts);
+      this.postsFiltered = this.posts.filter((x) => x.name.includes(search));
+    });
   }
 
   async addComment(idx: number, idPost: string): Promise<void> {
@@ -80,6 +89,7 @@ export class HomeComponent implements OnInit {
           return acc;
         }, []);
         this.posts = this.posts.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        this.postsFiltered = this.posts;
         this.formInit();
         this.addControls();
       });
