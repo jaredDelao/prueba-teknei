@@ -27037,43 +27037,43 @@
           f.qc(3, '\n          '),
           f.Sb(4, 'ion-avatar', 1),
           f.qc(5, '\n            '),
-          f.Ob(6, 'ion-skeleton-text', 10),
+          f.Ob(6, 'ion-skeleton-text', 11),
           f.qc(7, '\n          '),
           f.Rb(),
           f.qc(8, '\n          '),
-          f.Ob(9, 'ion-skeleton-text', 11),
+          f.Ob(9, 'ion-skeleton-text', 12),
           f.qc(10, '\n        '),
           f.Rb(),
           f.qc(11, '\n\n        '),
-          f.Sb(12, 'ion-thumbnail', 12),
+          f.Sb(12, 'ion-thumbnail', 13),
           f.qc(13, '\n          '),
-          f.Ob(14, 'ion-skeleton-text', 10),
+          f.Ob(14, 'ion-skeleton-text', 11),
           f.qc(15, '\n        '),
           f.Rb(),
           f.qc(16, '\n\n        '),
           f.Sb(17, 'ion-card-content'),
           f.qc(18, '\n          '),
-          f.Sb(19, 'p', 13),
+          f.Sb(19, 'p', 14),
           f.qc(20, '\n            '),
-          f.Ob(21, 'ion-skeleton-text', 10),
+          f.Ob(21, 'ion-skeleton-text', 11),
           f.qc(22, '\n          '),
           f.Rb(),
           f.qc(23, '\n          '),
-          f.Sb(24, 'p', 13),
+          f.Sb(24, 'p', 14),
           f.qc(25, '\n            '),
-          f.Ob(26, 'ion-skeleton-text', 10),
+          f.Ob(26, 'ion-skeleton-text', 11),
           f.qc(27, '\n          '),
           f.Rb(),
           f.qc(28, '\n          '),
           f.Sb(29, 'ion-item'),
           f.qc(30, '\n            '),
-          f.Sb(31, 'p', 13),
+          f.Sb(31, 'p', 14),
           f.qc(32, '\n              '),
-          f.Ob(33, 'ion-skeleton-text', 10),
+          f.Ob(33, 'ion-skeleton-text', 11),
           f.qc(34, '\n            '),
           f.Rb(),
           f.qc(35, '\n            '),
-          f.Ob(36, 'ion-skeleton-text', 14),
+          f.Ob(36, 'ion-skeleton-text', 15),
           f.qc(37, '\n          '),
           f.Rb(),
           f.qc(38, '\n        '),
@@ -27085,16 +27085,16 @@
         return [1, 2, 3, 4, 5];
       };
       function y(t, e) {
-        1 & t && (f.Qb(0, null, 8), f.qc(2, '\n      '), f.pc(3, m, 40, 0, 'ion-card', 9), f.qc(4, '\n    '), f.Pb()),
+        1 & t && (f.Qb(0, null, 9), f.qc(2, '\n      '), f.pc(3, m, 40, 0, 'ion-card', 10), f.qc(4, '\n    '), f.Pb()),
           2 & t && (f.Db(3), f.ic('ngForOf', f.jc(1, b)));
       }
       function v(t, e) {
-        1 & t && (f.Sb(0, 'small', 15), f.qc(1, 'No se encontraron resultados'), f.Rb());
+        1 & t && (f.Sb(0, 'small', 16), f.qc(1, 'No se encontraron resultados'), f.Rb());
       }
       function w(t, e) {
         if (
           (1 & t &&
-            (f.Sb(0, 'ion-text', 23),
+            (f.Sb(0, 'ion-text', 24),
             f.qc(1, '\n            '),
             f.Sb(2, 'p'),
             f.qc(3, '\n              '),
@@ -27119,13 +27119,13 @@
       function _(t, e) {
         if (1 & t) {
           const t = f.Tb();
-          f.Sb(0, 'ion-card', 17),
+          f.Sb(0, 'ion-card', 18),
             f.qc(1, '\n        '),
             f.Sb(2, 'ion-item'),
             f.qc(3, '\n          '),
             f.Sb(4, 'ion-avatar', 1),
             f.qc(5, '\n            '),
-            f.Sb(6, 'img', 18),
+            f.Sb(6, 'img', 19),
             f.ac('load', function () {
               return f.mc(t), (f.cc(2).loader = !1);
             }),
@@ -27142,7 +27142,7 @@
             f.qc(14, '\n        '),
             f.Rb(),
             f.qc(15, '\n\n        '),
-            f.Ob(16, 'img', 19),
+            f.Ob(16, 'img', 20),
             f.qc(17, '\n\n        '),
             f.Sb(18, 'ion-card-content'),
             f.qc(19, '\n          '),
@@ -27158,13 +27158,13 @@
             f.qc(27, '\n          '),
             f.Rb(),
             f.qc(28, '\n\n          '),
-            f.pc(29, w, 11, 6, 'ion-text', 20),
+            f.pc(29, w, 11, 6, 'ion-text', 21),
             f.qc(30, '\n\n          '),
             f.Sb(31, 'ion-item'),
             f.qc(32, '\n            '),
-            f.Ob(33, 'ion-input', 21),
+            f.Ob(33, 'ion-input', 22),
             f.qc(34, '\n            '),
-            f.Sb(35, 'ion-button', 22),
+            f.Sb(35, 'ion-button', 23),
             f.ac('click', function () {
               f.mc(t);
               const n = e.index,
@@ -27202,7 +27202,7 @@
       }
       function S(t, e) {
         if (
-          (1 & t && (f.Qb(0), f.qc(1, '\n      '), f.pc(2, _, 40, 18, 'ion-card', 16), f.qc(3, '\n    '), f.Pb()),
+          (1 & t && (f.Qb(0), f.qc(1, '\n      '), f.pc(2, _, 40, 18, 'ion-card', 17), f.qc(3, '\n    '), f.Pb()),
           2 & t)
         ) {
           const t = f.cc();
@@ -27227,13 +27227,20 @@
             this.formInit(), this.getUsers(), this.getPosts();
           }
           ionViewDidLeave() {
-            (this.users = []), (this.posts = []), this.$unsubscribe.next(!0), this.$unsubscribe.complete();
+            (this.users = []),
+              (this.posts = []),
+              (this.postsFiltered = []),
+              this.$unsubscribe.next(!0),
+              this.$unsubscribe.complete();
           }
           ngAfterViewInit() {
             this.controlSearch.valueChanges.subscribe((t) => {
               if (!t) return (this.postsFiltered = this.posts);
               this.postsFiltered = this.posts.filter((e) => e.name.includes(t));
             });
+          }
+          clearSearch() {
+            this.controlSearch.reset();
           }
           addComment(t, e) {
             return Object(u.b)(this, void 0, void 0, function* () {
@@ -27283,9 +27290,8 @@
                   (this.posts = this.posts.sort(
                     (t, e) => new Date(e.createdAt).getTime() - new Date(t.createdAt).getTime()
                   )),
-                  (this.postsFiltered = this.posts),
-                  this.formInit(),
-                  this.addControls();
+                  this.addControls(),
+                  (this.postsFiltered = this.posts);
               });
           }
           addControls() {
@@ -27301,7 +27307,7 @@
           (t.ɵcmp = f.Hb({
             type: t,
             selectors: [['app-home']],
-            decls: 34,
+            decls: 37,
             vars: 4,
             consts: [
               ['color', 'primary'],
@@ -27311,6 +27317,7 @@
               [4, 'ngIf'],
               ['slot', 'start', 'name', 'search-outline'],
               ['type', 'text', 'placeholder', 'Buscar una imagen...', 3, 'formControl'],
+              ['expand', 'block', 'fill', 'clear', 3, 'click'],
               ['class', 'not-found-txt', 4, 'ngIf'],
               ['skeleton', ''],
               [4, 'ngFor', 'ngForOf'],
@@ -27362,23 +27369,30 @@
                 f.Ob(23, 'ion-icon', 5),
                 f.qc(24, '\n      '),
                 f.Ob(25, 'ion-input', 6),
-                f.qc(26, '\n    '),
+                f.qc(26, '\n      '),
+                f.Sb(27, 'ion-button', 7),
+                f.ac('click', function () {
+                  return e.clearSearch();
+                }),
+                f.qc(28, ' Limpiar b\xfasqueda '),
                 f.Rb(),
-                f.qc(27, '\n    '),
-                f.pc(28, v, 2, 0, 'small', 7),
                 f.qc(29, '\n    '),
-                f.pc(30, S, 4, 1, 'ng-container', 4),
-                f.qc(31, '\n  '),
                 f.Rb(),
-                f.qc(32, '\n'),
+                f.qc(30, '\n    '),
+                f.pc(31, v, 2, 0, 'small', 8),
+                f.qc(32, '\n    '),
+                f.pc(33, S, 4, 1, 'ng-container', 4),
+                f.qc(34, '\n  '),
                 f.Rb(),
-                f.qc(33, '\n')),
+                f.qc(35, '\n'),
+                f.Rb(),
+                f.qc(36, '\n')),
                 2 & t &&
                   (f.Db(19),
                   f.ic('ngIf', 0 == e.posts.length || e.loader),
                   f.Db(6),
                   f.ic('formControl', e.controlSearch),
-                  f.Db(3),
+                  f.Db(6),
                   f.ic('ngIf', e.controlSearch.value && 0 == e.postsFiltered.length),
                   f.Db(2),
                   f.ic('ngIf', e.postsFiltered.length > 0));
@@ -27398,6 +27412,7 @@
               o.M,
               d.i,
               d.c,
+              o.e,
               r.j,
               o.g,
               o.d,
@@ -27409,7 +27424,6 @@
               o.r,
               o.E,
               d.d,
-              o.e,
             ],
             pipes: [p.a, g.a],
             styles: [
