@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><span translate>My posts</span></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ng-container *ngIf="empty">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-text color="primary">
+            <h1>No tienes ningún post</h1>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-container>
+
+  <div class="wrapper">
+    <ng-container #skeleton *ngIf="posts.length == 0 || loader">
+      <ion-card *ngFor="let item of skeletonCount">
+        <ion-item>
+          <ion-avatar slot="start">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-avatar>
+          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+        </ion-item>
+
+        <ion-thumbnail style="width: 100%; height: 300px">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+      </ion-card>
+    </ng-container>
+
+    <ng-container *ngIf="posts.length > 0">
+      <ion-card *ngFor="let post of posts">
+        <ion-item>
+          <ion-avatar slot="start">
+            <img [src]="post.idUser | getName: users:'photo' | imgNotFound" (load)="loader = false" />
+          </ion-avatar>
+          <ion-label>{{ post.idUser | getName: users:'name' }}</ion-label>
+          <ion-button color="danger" slot="end" (click)="deletePost(post.id)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <img [src]="post.photo" />
+      </ion-card>
+    </ng-container>
+  </div>
+</ion-content>

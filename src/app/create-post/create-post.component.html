@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><span translate>Create Post</span></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card class="ion-text-center">
+    <ion-card-content>
+      <ion-card-title>Create Post</ion-card-title>
+
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">
+              <ion-item>
+                <ion-label position="floating" color="primary">Nombre</ion-label>
+                <ion-input placeholder="Escribe el nombre del post" [formControl]="controlName"> </ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <ion-item lines="none">
+                <ion-icon *ngIf="filePhoto" name="checkmark-circle-outline" color="success" slot="start"></ion-icon>
+                <ion-button expand="block" (click)="fileUpload.click()"> Adjuntar imagen </ion-button>
+              </ion-item>
+              <input
+                #fileUpload
+                type="file"
+                style="display: none"
+                accept="image/png, image/jpeg"
+                (change)="setFilePhoto($event)"
+              />
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <ion-button
+                color="dark"
+                (click)="save()"
+                expand="fill"
+                [disabled]="!filePhoto || controlName.invalid || loading"
+              >
+                {{ loading ? 'Guardando...' : 'Guardar' }}
+                <ion-spinner *ngIf="loading" name="circular"></ion-spinner>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
