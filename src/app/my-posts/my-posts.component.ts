@@ -57,6 +57,7 @@ export class MyPostsComponent implements OnInit {
           text: 'Aceptar',
           handler: async () => {
             await this.postsService.deletePost(id);
+            this.getPosts();
           },
         },
       ],

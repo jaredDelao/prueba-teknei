@@ -22869,7 +22869,7 @@
                           text: 'Aceptar',
                           handler: () =>
                             Object(s.b)(this, void 0, void 0, function* () {
-                              yield this.postsService.deletePost(t);
+                              yield this.postsService.deletePost(t), this.getPosts();
                             }),
                         },
                       ],
