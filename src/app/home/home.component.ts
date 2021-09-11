@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ionViewDidLeave() {
     this.users = [];
     this.posts = [];
+    this.postsFiltered = [];
     this.$unsubscribe.next(true);
     this.$unsubscribe.complete();
   }
@@ -44,6 +45,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
       if (!search) return (this.postsFiltered = this.posts);
       this.postsFiltered = this.posts.filter((x) => x.name.includes(search));
     });
+  }
+
+  clearSearch(): void {
+    this.controlSearch.reset();
   }
 
   async addComment(idx: number, idPost: string): Promise<void> {
@@ -61,7 +66,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
-  private formInit() {
+  private formInit(): void {
     this.form = this.fb.group({});
   }
 
@@ -89,9 +94,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
           return acc;
         }, []);
         this.posts = this.posts.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
-        this.postsFiltered = this.posts;
-        this.formInit();
         this.addControls();
+        this.postsFiltered = this.posts;
       });
   }
 
