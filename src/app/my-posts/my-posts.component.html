@@ -20,7 +20,7 @@
   </ng-container>
 
   <div class="wrapper">
-    <ng-container #skeleton *ngIf="posts.length == 0 || loader">
+    <ng-container #skeleton *ngIf="(posts.length == 0 || loader) && !empty">
       <ion-card *ngFor="let item of skeletonCount">
         <ion-item>
           <ion-avatar slot="start">

@@ -32,6 +32,8 @@ export class MyPostsComponent implements OnInit {
   }
 
   ionViewDidLeave() {
+    this.empty = false;
+    this.loader = true;
     this.$unsubscribe.next(true);
     this.$unsubscribe.complete();
   }
@@ -57,6 +59,7 @@ export class MyPostsComponent implements OnInit {
           text: 'Aceptar',
           handler: async () => {
             await this.postsService.deletePost(id);
+            this.getPosts();
           },
         },
       ],

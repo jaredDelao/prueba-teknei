@@ -22851,7 +22851,7 @@
                   this.getUsers(), this.getPosts();
                 }
                 ionViewDidLeave() {
-                  this.$unsubscribe.next(!0), this.$unsubscribe.complete();
+                  (this.empty = !1), (this.loader = !0), this.$unsubscribe.next(!0), this.$unsubscribe.complete();
                 }
                 deletePost(t) {
                   return Object(s.b)(this, void 0, void 0, function* () {
@@ -22869,7 +22869,7 @@
                           text: 'Aceptar',
                           handler: () =>
                             Object(s.b)(this, void 0, void 0, function* () {
-                              yield this.postsService.deletePost(t);
+                              yield this.postsService.deletePost(t), this.getPosts();
                             }),
                         },
                       ],
@@ -22963,7 +22963,7 @@
                         (l.Db(17),
                         l.ic('ngIf', e.empty),
                         l.Db(4),
-                        l.ic('ngIf', 0 == e.posts.length || e.loader),
+                        l.ic('ngIf', (0 == e.posts.length || e.loader) && !e.empty),
                         l.Db(2),
                         l.ic('ngIf', e.posts.length > 0));
                   },
@@ -27227,7 +27227,11 @@
             this.formInit(), this.getUsers(), this.getPosts();
           }
           ionViewDidLeave() {
-            (this.users = []), (this.posts = []), this.$unsubscribe.next(!0), this.$unsubscribe.complete();
+            (this.users = []),
+              (this.posts = []),
+              (this.postsFiltered = []),
+              this.$unsubscribe.next(!0),
+              this.$unsubscribe.complete();
           }
           ngAfterViewInit() {
             this.controlSearch.valueChanges.subscribe((t) => {
@@ -27283,9 +27287,9 @@
                   (this.posts = this.posts.sort(
                     (t, e) => new Date(e.createdAt).getTime() - new Date(t.createdAt).getTime()
                   )),
-                  (this.postsFiltered = this.posts),
                   this.formInit(),
-                  this.addControls();
+                  this.addControls(),
+                  (this.postsFiltered = this.posts);
               });
           }
           addControls() {
