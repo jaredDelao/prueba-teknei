@@ -47,6 +47,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
+  clearSearch(): void {
+    this.controlSearch.reset();
+  }
+
   async addComment(idx: number, idPost: string): Promise<void> {
     try {
       const description = this.form.get(idPost).value;
@@ -62,7 +66,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
-  private formInit() {
+  private formInit(): void {
     this.form = this.fb.group({});
   }
 

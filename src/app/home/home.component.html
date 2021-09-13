@@ -41,6 +41,7 @@
     <ion-item>
       <ion-icon slot="start" name="search-outline"></ion-icon>
       <ion-input type="text" placeholder="Buscar una imagen..." [formControl]="controlSearch"></ion-input>
+      <ion-button (click)="clearSearch()" expand="block" fill="clear"> Limpiar búsqueda </ion-button>
     </ion-item>
     <small class="not-found-txt" *ngIf="controlSearch.value && postsFiltered.length == 0"
       >No se encontraron resultados</small
